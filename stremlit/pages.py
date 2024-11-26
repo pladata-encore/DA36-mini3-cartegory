@@ -13,7 +13,7 @@ def main_page():
         </style>
     """, unsafe_allow_html=True)
 
-    st.image("data/park.jpg")
+    st.image("C:\Workspace\DA36-mini3-dl2\streamlit\data\park.jpg")
     st.title("Where to Park?")
     st.markdown("<br>", unsafe_allow_html=True)
 
@@ -46,7 +46,6 @@ def upload_page():
     with col3:
         if st.button("More"):
             return 3  # 페이지 3으로 이동
-
     return 2
 
 def more_page():
