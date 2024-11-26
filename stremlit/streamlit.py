@@ -10,7 +10,7 @@ def go_to_page(page_num):
     st.session_state['page'] = page_num
 
 if st.session_state['page'] == 1:
-    main_bg_color = "#A9D0F5"  # 메인 페이지 배경색
+    main_bg_color = "#CEF6F5"  # 메인 페이지 배경색
 
     # CSS 스타일을 적용하여 배경 색 변경
     st.markdown(f"""
@@ -22,17 +22,17 @@ if st.session_state['page'] == 1:
             </style>
             """, unsafe_allow_html=True)
     # st.image("data/jeju.gif", use_column_width=True)
-    st.image("C:\Workspace\DA36-mini3-dl2\data\eyes.jpg", use_container_width=True)
-    st.title("Where to Park??")
+    st.image("data\park.jpg")
+    st.title("Where to Park?")
     st.markdown("<br>", unsafe_allow_html=True)
-    if st.button("Show your car"):
+    if st.button("Show me your car"):
         go_to_page(2)
 
 # 페이지별 내용 표시
 elif st.session_state['page'] == 2:
     # 배경색 설정 (고정)
-    main_bg_color = "#F6CEF5"  # 메인 페이지 배경색
-
+    main_bg_color = "#ECF8E0"  # 메인 페이지 배경색
+    # st.image("data\eyes.jpg")
     # CSS 스타일을 적용하여 배경 색 변경
     st.markdown(f"""
         <style>
@@ -51,11 +51,18 @@ elif st.session_state['page'] == 2:
     # sidebar input
     # 첫 번째 구간
     # 선택된 옵션 - 메인 페이지에 표시
-    st.subheader('쩌구')
-    # st.markdown()
-
+    st.subheader('upload here⬇️')
+    img_file = st.file_uploader('', type=['png', 'jpg', 'jpeg'])
+    st.markdown('Your car is..')
+    st.markdown('Accuracy is..')
+    st.write('-' * 10)
     #     go_to_page(3)
-    col1, col2, col3 = st.columns([2, 2.5, 2])  # 좌측, 중앙, 우측 열로 나누기
+    # col1, col2, col3 = st.columns([2, 2.5, 2])  # 좌측, 중앙, 우측 열로 나누기
+    col1, col2, col3 = st.columns([2, 4, 2])  # 좌측, 중앙, 우측 열로 나누기
+
+    with col1:
+        if st.button("⬅️Back"):
+            go_to_page(1)
 
     with col3:
         if st.button("More"):
@@ -63,7 +70,7 @@ elif st.session_state['page'] == 2:
 
 elif st.session_state['page'] == 3:
     # 배경색 설정 (고정)
-    main_bg_color = "#F6CEF5"  # 메인 페이지 배경색
+    main_bg_color = "#F8E6E0"  # 메인 페이지 배경색
 
     # CSS 스타일을 적용하여 배경 색 변경
     st.markdown(f"""
@@ -76,7 +83,7 @@ elif st.session_state['page'] == 3:
         """, unsafe_allow_html=True)
 
     # 페이지 제목
-    st.title("More!")
+    st.title("More about EV!")
     st.write('-' * 20)
 
     place_list = st.session_state.get('place_list', [])
@@ -92,6 +99,6 @@ elif st.session_state['page'] == 3:
     col1, col2, col3 = st.columns([2, 4, 2])  # 좌측, 중앙, 우측 열로 나누기
 
     with col1:
-        if st.button("⬅️이전으로"):
+        if st.button("⬅️Back"):
             go_to_page(2)
 
