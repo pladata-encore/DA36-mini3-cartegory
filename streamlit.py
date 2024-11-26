@@ -22,7 +22,7 @@ if st.session_state['page'] == 1:
             </style>
             """, unsafe_allow_html=True)
     # st.image("data/jeju.gif", use_column_width=True)
-    st.image("data/eyes.jpg", use_container_width=True)
+    st.image("C:\Workspace\DA36-mini3-dl2\data\eyes.jpg", use_container_width=True)
     st.title("Where to Park??")
     st.markdown("<br>", unsafe_allow_html=True)
     if st.button("Show your car"):
