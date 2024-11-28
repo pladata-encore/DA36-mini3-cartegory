@@ -60,8 +60,8 @@ if st.session_state['page'] == 1:
             </style>
             """, unsafe_allow_html=True)
 
-    st.title("CARTEGORY BY 하와수")
-    st.markdown("Where to Park?")
+    st.title("Where to Park?")
+    st.markdown("CARTEGORY BY 하와수")
     st.markdown("<br>", unsafe_allow_html=True)
 
     if st.button("Show me your car"):
